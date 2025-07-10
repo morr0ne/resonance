@@ -29,7 +29,7 @@ export const Login: Component = () => {
           form.handleSubmit();
         }}
       >
-        <div style={{ display: 'flex', 'flex-direction': 'column' }}>
+        <div class="flex max-w-3xl flex-col">
           <form.Field
             name="name"
             children={(field) => (
