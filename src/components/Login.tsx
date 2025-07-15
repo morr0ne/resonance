@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 import { createForm } from '@tanstack/solid-form';
-import { authClient } from '@/lib/auth-client';
+import { authClient } from '@/utils/auth-client';
 
 export const Login: Component = () => {
   const form = createForm(() => ({
@@ -21,7 +21,6 @@ export const Login: Component = () => {
 
   return (
     <div>
-      <h1>Simple Form Example</h1>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -29,7 +28,7 @@ export const Login: Component = () => {
           form.handleSubmit();
         }}
       >
-        <div class="flex max-w-3xl flex-col">
+        <div class="flex max-w-md flex-col">
           <form.Field
             name="name"
             children={(field) => (
@@ -69,7 +68,9 @@ export const Login: Component = () => {
             )}
           />
         </div>
-        <button type="submit">Submit</button>
+        <button class="cursor-pointer" type="submit">
+          Login
+        </button>
       </form>
     </div>
   );

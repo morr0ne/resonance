@@ -1,13 +1,6 @@
 ---
 import { Login } from '@/components/Login';
 import Base from '@/layouts/Base.astro';
-import { auth } from '@/lib/auth';
-
-const authSession = await auth.api.getSession({
-  headers: Astro.request.headers,
-});
-
-console.log(authSession);
 ---
 
 <Base>
