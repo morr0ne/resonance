@@ -13,6 +13,9 @@ export const auth = betterAuth({
     enabled: true,
   },
   plugins: [username()],
+  advanced: {
+    cookiePrefix: 'resonance',
+  },
 });
 
 export type Session = typeof auth.$Infer.Session;
