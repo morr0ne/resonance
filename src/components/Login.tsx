@@ -20,58 +20,59 @@ export const Login: Component = () => {
   }));
 
   return (
-    <div>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          form.handleSubmit();
-        }}
-      >
-        <div class="flex max-w-md flex-col">
-          <form.Field
-            name="name"
-            children={(field) => (
-              <input
-                placeholder="name"
-                name={field().name}
-                value={field().state.value}
-                onBlur={field().handleBlur}
-                onInput={(e) => field().handleChange(e.target.value)}
-              />
-            )}
-          />
-          <form.Field
-            name="email"
-            children={(field) => (
-              <input
-                type="email"
-                placeholder="email"
-                name={field().name}
-                value={field().state.value}
-                onBlur={field().handleBlur}
-                onInput={(e) => field().handleChange(e.target.value)}
-              />
-            )}
-          />
-          <form.Field
-            name="password"
-            children={(field) => (
-              <input
-                type="password"
-                placeholder="password"
-                name={field().name}
-                value={field().state.value}
-                onBlur={field().handleBlur}
-                onInput={(e) => field().handleChange(e.target.value)}
-              />
-            )}
-          />
-        </div>
-        <button class="cursor-pointer" type="submit">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        form.handleSubmit();
+      }}
+    >
+      <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+        <form.Field
+          name="name"
+          children={(field) => (
+            <input
+              class="input"
+              placeholder="name"
+              name={field().name}
+              value={field().state.value}
+              onBlur={field().handleBlur}
+              onInput={(e) => field().handleChange(e.target.value)}
+            />
+          )}
+        />
+        <form.Field
+          name="email"
+          children={(field) => (
+            <input
+              class="input"
+              type="email"
+              placeholder="email"
+              name={field().name}
+              value={field().state.value}
+              onBlur={field().handleBlur}
+              onInput={(e) => field().handleChange(e.target.value)}
+            />
+          )}
+        />
+        <form.Field
+          name="password"
+          children={(field) => (
+            <input
+              class="input"
+              type="password"
+              placeholder="password"
+              name={field().name}
+              value={field().state.value}
+              onBlur={field().handleBlur}
+              onInput={(e) => field().handleChange(e.target.value)}
+            />
+          )}
+        />
+        <button class="btn btn-neutral mt-4" type="submit">
           Login
         </button>
-      </form>
-    </div>
+      </fieldset>
+    </form>
   );
 };
